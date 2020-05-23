@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<!--fy最帅2020年5月17日 12:30:58-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+
+    <title>Title</title>
+    <style type="text/css">
+        body.custom-background {
+            background-image:url('1431335355535.jpg');
+            background-size:100% 100%;
+            background-repeat:no-repeat;
+            background-position:top left;
+            background-attachment:fixed;
+        }
+    </style>
+</head>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- 2. jQuery导入，建议使用1.9以上的版本 -->
+<script src="js/jquery-2.1.0.min.js"></script>
+<!-- 3. 导入bootstrap的js文件 -->
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/all.js"></script>
+
+<body class="custom-background">
+<span class="snow-container" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:100001;">
+
+<div></div>
+    <form class="form-inline" style="margin-left: 50% ; margin-top: 100px" >
+        <div class="form-group " style="align-content: center;">
+            <input type="text" style="height: 50%" class="form-control qqq" id="getIp" placeholder="ip将会显示在这里" readonly>
+        </div>
+        <a class="btn btn-default qqq" style="" onclick="getIp()">查询Ip</a>
+<!--        <button class="btn btn-default">查询Ip</button>-->
+        <div></div>
+        <div class="form-group col-xs-6">
+            <a class="btn btn-info qqq" onclick="getGame();" href="20">玩玩小游戏</a>
+        </div>
+    </form>
+
+
+</span>
+
+</body>
+<script>
+
+    function getIp(){
+    $.get("aip",function (aip) {
+        $("#getIp").val(aip);
+    })
+    }
+    function getGame(){
+        $.get("getGame",{name:"点小游戏"},function (f) {
+            var a=f;
+        })
+    }
+
+
+</script>
+</html>
