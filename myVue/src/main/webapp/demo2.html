@@ -8,11 +8,27 @@
 	<body>
 		<div id="app">
 			{{message}}  
-			<button>vue的onclick</button>
+			<button v-on:click="fun1('点击了按钮')">vue的onclick</button>
 		</div>
 	</body>
 	<script>
 		//view model
+		new Vue({
+			el:"#app",
+			data:{
+				message:"第二个例子点击事件"
+			},
+			methods:{
+				fun1:function(msg){
+					this.message=msg;
+					alert("hello！")
+				}
+			}
+
+
+
+
+		});
 		
 	</script>
 </html> 
