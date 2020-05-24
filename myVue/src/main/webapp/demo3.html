@@ -1,35 +1,51 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8" />
-		<title>v-on:keydown</title>
-		<script src="js/vuejs-2.5.16.js"></script>
-	</head>
+<head>
+    <meta charset="utf-8"/>
+    <title>v-on:keydown</title>
+    <script src="js/vuejs-2.5.16.js"></script>
+</head>
 
-	<body>
-		<div id="app">
-			<!--<input type="text" v-on:keydown="fun($event)">-->
+<body>
+<div id="app">
+    <input type="text" v-on:keydown="fun($event)">
+    <span id="span1"></span>
+  传统js  <input type="text" onkeydown="showKeyCode()">
+</div>
+</body>
+<script>
+    //view model
+	new Vue({
+		el:"#app",
+		methods:{
+			//$event是Vue中的事件对象  和我们传统js的event对象是一样的
+			fun:function (event) {
+				if (event.keyCode < 48 || event.keyCode > 57) {
+					event.preventDefault();
+				}
 
-			<input type="text" onkeydown="showKeyCode()">
-		</div>
-	</body>
-	<script>
-		//view model
-		function showKeyCode() {
-			//event对象和我们的document以及window对象都是一样的，可以不用定义直接使用
-			alert(1)
+			}
+
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-	</script>
-	
-	
+
+	});
+
+    function showKeyCode() {
+        //event对象和我们的document以及window对象都是一样的，可以不用定义直接使用
+
+        var a = document.getElementById("span1").innerHTML = event.keyCode;
+
+        if (a < 48 || a > 57) {
+        	event.preventDefault();
+        }  if (a === 13) {
+			alert("别按回车嗷！！")
+		}
+    }
+
+
+
+</script>
+
 
 </html>

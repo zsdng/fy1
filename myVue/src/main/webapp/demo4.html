@@ -7,6 +7,8 @@
 		<style>
 			#div {
 				background-color: red;
+				width: 300px;
+				height: 300px;
 			}
 		</style>
 		<script src="js/vuejs-2.5.16.js"></script>
@@ -17,10 +19,28 @@
 			<div @mouseover="fun1" id="div">
 				<textarea @mouseover="fun2($event)">这是一个文件域</textarea>
 			</div>
+
+			<div onmouseover="oooo1();" id="div">
+				<textarea onmouseover="oooo2();">这是一个文件域oooo</textarea>
+			</div>
+
+
+
 		</div>
+
+
 	</body>
 	<script>
 		//view model
+		function oooo1() {
+		alert("鼠标移动到div上了！")
+
+		}
+		function oooo2() {
+		alert("鼠标移动到textarea上了！")
+
+		}
+
 		
 	</script>
 
