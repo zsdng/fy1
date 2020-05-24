@@ -7,11 +7,30 @@
 	</head>
 	<body>
 		<div id="app">
-			
+			<span v-if="flag" id="12123">传智播客</span>
+			<span v-show="flag">itcast</span><br>
+			<button @click="toggle()">切换</button>
 		</div>
 	</body>
 	<script>
 		//view model
+		new Vue({
+			el:"#app",
+			data:{
+				flag:false
+			},
+			methods:{
+				toggle:function () {
+					console.log(this);
+					this.flag = !this.flag;
+				}
+			}
+
+		});
+
+	/*	document.onclick = function(){
+			console.log(this)
+		}*/
 		
 	</script>
 </html>

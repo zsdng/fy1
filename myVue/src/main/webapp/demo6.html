@@ -10,11 +10,20 @@
 
 	<body>
 		<div id="app">
-			
+			vue:<input type="text" @keydown.enter="fun1">
 		</div>
 	</body>
 	<script>
 		//view model
+		new Vue({
+			el:"#app",
+			methods:{
+				fun1:function () {
+					alert("跟你说了别按回车了啊！@")
+				}
+			}
+
+		})
 		
 	</script>
 

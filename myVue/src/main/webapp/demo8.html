@@ -9,12 +9,27 @@
 
 	<body>
 		<div id="app">
-			
+			<font size="5" :color="ys1">王培毅是傻逼</font>
+			<font size="5" :color="ys2">嗯嗯没错</font>
 		</div>
 	</body>
 	<script>
 		//view model
-		
+		//要想给html标签的属性设置变量的值需要使用v-bind
+		new Vue({
+			el:"#app",
+			data:{
+				ys1:"#65ddff",
+				ys2:"red"
+			},
+			methods:{
+				fun1:function(msg){
+					this.message=msg;
+					alert("hello！")
+				}
+			}
+
+		});
 	</script>
 
 </html>

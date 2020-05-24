@@ -30,15 +30,40 @@
 
 
 	</body>
+
+
 	<script>
 		//view model
+		new Vue({
+			el:"#app",
+			methods:{
+				fun1:function () {
+					alert("鼠标悬停在div")
+				},
+
+				fun2:function (event) {
+					event.stopPropagation();
+					alert("鼠标悬停在textarea上了")
+				}
+
+			}
+
+
+		});
+
+
+
+
+
+
 		function oooo1() {
-		alert("鼠标移动到div上了！")
+		alert("鼠标移动到div上了！");
+
 
 		}
 		function oooo2() {
-		alert("鼠标移动到textarea上了！")
-
+		alert("鼠标移动到textarea上了！");
+			event.stopPropagation();
 		}
 
 		
